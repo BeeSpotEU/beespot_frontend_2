@@ -22,6 +22,16 @@ const AddLocationForm = props => {
 
   return (
     <Form onSubmit={handleSubmit} className="location-form">
+      <Form.Item label="Bijenstandnaam" colon={false}>
+        {getFieldDecorator("Bijenstandnaam", {
+          rules: [
+            { 
+              required: true,
+              message: "Vul hier de naam van de bijenstand in."
+            }
+          ]
+        })(<Input placeholder="Bijenstandnaam" />)}
+      </Form.Item>
       <Form.Item label="Lengtegraad" colon={false}>
         {getFieldDecorator("longitude", {
           rules: [
