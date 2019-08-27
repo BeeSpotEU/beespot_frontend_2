@@ -6,7 +6,7 @@ const ButtonGroup = Button.Group;
 const AddLocationForm = props => {
   const {
     form: { getFieldDecorator },
-    // handleAddMachtiging,
+    handleAddLocation,
     loading
   } = props;
 
@@ -15,7 +15,7 @@ const AddLocationForm = props => {
 
     props.form.validateFields((err, values) => {
       if (!err) {
-        // handleAddMachtiging(values);
+        handleAddLocation(values);
       }
     });
   };
@@ -23,9 +23,9 @@ const AddLocationForm = props => {
   return (
     <Form onSubmit={handleSubmit} className="location-form">
       <Form.Item label="Bijenstandnaam" colon={false}>
-        {getFieldDecorator("Bijenstandnaam", {
+        {getFieldDecorator("name", {
           rules: [
-            { 
+            {
               required: true,
               message: "Vul hier de naam van de bijenstand in."
             }
@@ -33,9 +33,9 @@ const AddLocationForm = props => {
         })(<Input placeholder="Bijenstandnaam" />)}
       </Form.Item>
       <Form.Item label="Aantal volken in afgelopen jaar" colon={false}>
-        {getFieldDecorator("Volken", {
+        {getFieldDecorator("hives", {
           rules: [
-            { 
+            {
               required: true,
               message: "Vul hier het aantal volken van afgelopen jaar in."
             }

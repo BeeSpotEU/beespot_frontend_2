@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
@@ -11,33 +11,34 @@ import { Presentation } from "components/presentation";
 import { Clients } from "components/clients";
 import { LocationForm } from "components/location-form";
 import { MapViewer } from "components/mapviewer";
+import { ContextStoreProvider, ContextStore } from "utility/store";
 
 function App() {
-  const [state, setState] = useState("");
-  const [channel, setChannel] = useState();
+  const { state, dispatch } = useContext(ContextStore);
 
   useEffect(() => {
-    if (!channel) {
+    if (!state.channel) {
       const socket = new Socket("ws://localhost:4000/socket");
       socket.connect();
-      socket.onClose(e => console.log("Closed connection"));
+      socket.onClose(e => dispatch({ type: "setChannel", channel: null }));
 
-      const newChannel = socket.channel("room:lobby", {});
-      setChannel(newChannel);
+      const newChannel = socket.channel("locations:lobby", {});
       newChannel
         .join()
-        .receive("error", () => console.log("Connection error"))
-        .receive("ok", () => console.log("Connected"));
+        .receive("error", () => console.error("Connection error"))
+        .receive("ok", () =>
+          dispatch({ type: "setChannel", channel: newChannel })
+        );
 
-      newChannel.on("new_msg", payload => {
-        setState(payload.body);
-      });
+      // newChannel.on("new_msg", payload => {
+      //   setState(payload.body);
+      // });
     }
   }, []);
 
   const onChange = ({ target: { value } }) => {
-    if (channel) {
-      channel.push("new_msg", { body: value });
+    if (state.channel) {
+      state.channel.push("new_msg", { body: value });
     }
   };
 
