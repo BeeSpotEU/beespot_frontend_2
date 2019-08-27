@@ -12,6 +12,7 @@ import { Clients } from "components/clients";
 import { LocationForm } from "components/location-form";
 import { MapViewer } from "components/mapviewer";
 import { ContextStoreProvider, ContextStore } from "utility/store";
+import { PickLocation } from "components/pick-location";
 
 function App() {
   const { state, dispatch } = useContext(ContextStore);
@@ -52,6 +53,7 @@ function App() {
         <Route path="/location" exact component={LocationForm} />
         <Route path="/production" exact component={Production} />
         <Route path="/viewer" exact component={MapViewer} />
+        <Route path="/add-location" exact component={PickLocation} />
       </Router>
     </div>
   );
