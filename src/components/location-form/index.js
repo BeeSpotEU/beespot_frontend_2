@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Icon, Button } from "antd";
+import { Form, Input, InputNumber, Icon, Button } from "antd";
 
 const ButtonGroup = Button.Group;
 
@@ -31,6 +31,16 @@ const AddLocationForm = props => {
             }
           ]
         })(<Input placeholder="Bijenstandnaam" />)}
+      </Form.Item>
+      <Form.Item label="Aantal volken in afgelopen jaar" colon={false}>
+        {getFieldDecorator("Volken", {
+          rules: [
+            { 
+              required: true,
+              message: "Vul hier het aantal volken van afgelopen jaar in."
+            }
+          ]
+        })(<InputNumber min={0} max={99} />)}
       </Form.Item>
       <Form.Item label="Lengtegraad" colon={false}>
         {getFieldDecorator("longitude", {
