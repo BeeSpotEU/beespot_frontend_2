@@ -6,6 +6,7 @@ import { Socket } from "phoenix";
 import { Input } from "antd";
 import { AudienceForm } from "components/audience";
 import { FoodSources } from "components/foodsources";
+import { Production } from "components/production";
 import { Presentation } from "components/presentation";
 import { Clients } from "components/clients";
 import { LocationForm } from "components/location-form";
@@ -48,6 +49,7 @@ function App() {
         <Route path="/foodsources" exact component={FoodSources} />
         <Route path="/presentation" exact component={Presentation} />
         <Route path="/location" exact component={LocationForm} />
+        <Route path="/production" exact component={Production} />
         <Route path="/viewer" exact component={MapViewer} />
       </Router>
     </div>
