@@ -1,7 +1,7 @@
 import React from "react";
-import { Form, Input, Icon, Button, DatePicker, Select } from "antd";
+import { Form, Input, Icon, Button } from "antd";
 
-const { Option } = Select;
+const ButtonGroup = Button.Group;
 
 const AddLocationForm = props => {
   const {
@@ -52,16 +52,32 @@ const AddLocationForm = props => {
           ]
         })(<Input placeholder="Breedtegraad" />)}
       </Form.Item>
-      <Form.Item>
+      <ButtonGroup>
+        <Button
+          loading={loading}
+          type="danger"
+          htmlType="submit"
+          className="login-form-button"
+        >
+          Ik heb geen bijenstand
+        </Button>
+        <Button
+          loading={loading}
+          type="default"
+          htmlType="submit"
+          className="login-form-button"
+        >
+          Nog een stand...
+        </Button>
         <Button
           loading={loading}
           type="primary"
           htmlType="submit"
           className="login-form-button"
         >
-          submit
+          Klaar
         </Button>
-      </Form.Item>
+      </ButtonGroup>
     </Form>
   );
 };
