@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Socket } from "phoenix";
 import { Input } from "antd";
+import { AudienceForm } from "components/audience";
 import { Presentation } from "components/presentation";
 import { Clients } from "components/clients";
 import { LocationForm } from "components/location-form";
@@ -14,7 +15,7 @@ function App() {
   const [channel, setChannel] = useState();
 
   useEffect(() => {
-    if (!channel) {
+    if (false && !channel) {
       const socket = new Socket("ws://localhost:4000/socket");
       socket.connect();
       socket.onClose(e => console.log("Closed connection"));
@@ -42,6 +43,7 @@ function App() {
     <div className="App">
       <Router>
         <Route path="/" exact component={Clients} />
+        <Route path="/audience" exact component={AudienceForm} />
         <Route path="/presentation" exact component={Presentation} />
         <Route path="/location" exact component={LocationForm} />
         <Route path="/viewer" exact component={MapViewer} />
