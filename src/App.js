@@ -17,7 +17,7 @@ function App() {
   const [channel, setChannel] = useState();
 
   useEffect(() => {
-    if (false && !channel) {
+    if (!channel) {
       const socket = new Socket("ws://localhost:4000/socket");
       socket.connect();
       socket.onClose(e => console.log("Closed connection"));
