@@ -1,24 +1,34 @@
 import * as React from "react";
+import produce from "immer";
 
 const ContextStore = React.createContext();
 
 const initialState = {
   channel: null,
-  locations: []
+  selfCreatedLocations: new Map(),
+  locations: new Map()
 };
 
 const reducer = (state, action) => {
-  switch (action.type) {
-    case "setChannel": {
-      return {
-        ...state,
-        channel: action.channel
-      };
+  return produce(state, draft => {
+    switch (action.type) {
+      case "setChannel":
+        draft.channel = action.channel;
+        break;
+      case "newLocation":
+        draft.locations = new Map(
+          draft.locations.set(action.location.id, action.location)
+        );
+        break;
+      case "createdLocation":
+        draft.selfCreatedLocations = new Map(
+          draft.selfCreatedLocations.set(action.location.id, action.location)
+        );
+        break;
+      default:
+        break;
     }
-    default:
-      console.log("Deze reducer bestaat nog niet");
-      return state;
-  }
+  });
 };
 
 const ContextStoreProvider = ({ children }) => {

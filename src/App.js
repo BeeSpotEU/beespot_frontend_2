@@ -31,17 +31,15 @@ function App() {
           dispatch({ type: "setChannel", channel: newChannel })
         );
 
-      // newChannel.on("new_msg", payload => {
-      //   setState(payload.body);
-      // });
+      newChannel.on("new_location", payload => {
+        dispatch({ type: "newLocation", location: payload.body });
+      });
+
+      newChannel.on("created_location", payload => {
+        dispatch({ type: "createdLocation", location: payload.body });
+      });
     }
   }, []);
-
-  const onChange = ({ target: { value } }) => {
-    if (state.channel) {
-      state.channel.push("new_msg", { body: value });
-    }
-  };
 
   return (
     <div className="App">
