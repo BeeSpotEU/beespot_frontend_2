@@ -31,6 +31,8 @@ function App() {
           dispatch({ type: "setChannel", channel: newChannel })
         );
 
+      newChannel.push("create_session", {});
+      newChannel.on("created_session", console.log);
       newChannel.on("new_location", payload => {
         dispatch({ type: "newLocation", location: payload.body });
       });
