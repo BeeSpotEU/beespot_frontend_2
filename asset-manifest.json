@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.1558e22a.chunk.css",
-    "main.js": "/static/js/main.1b8fbc67.chunk.js",
-    "main.js.map": "/static/js/main.1b8fbc67.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.3efbfbfe.js",
-    "runtime~main.js.map": "/static/js/runtime~main.3efbfbfe.js.map",
-    "static/css/2.e775cb2d.chunk.css": "/static/css/2.e775cb2d.chunk.css",
-    "static/js/2.a8182780.chunk.js": "/static/js/2.a8182780.chunk.js",
-    "static/js/2.a8182780.chunk.js.map": "/static/js/2.a8182780.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.35a8fe9501245579971a4bd3af1b1aa7.js": "/precache-manifest.35a8fe9501245579971a4bd3af1b1aa7.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.e775cb2d.chunk.css.map": "/static/css/2.e775cb2d.chunk.css.map",
-    "static/css/main.1558e22a.chunk.css.map": "/static/css/main.1558e22a.chunk.css.map",
-    "static/media/bee-logo.svg": "/static/media/bee-logo.9a5c4dbf.svg",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/beespot_frontend_2/static/css/main.1558e22a.chunk.css",
+    "main.js": "/beespot_frontend_2/static/js/main.a5fede7f.chunk.js",
+    "main.js.map": "/beespot_frontend_2/static/js/main.a5fede7f.chunk.js.map",
+    "runtime~main.js": "/beespot_frontend_2/static/js/runtime~main.55ac477c.js",
+    "runtime~main.js.map": "/beespot_frontend_2/static/js/runtime~main.55ac477c.js.map",
+    "static/css/2.e775cb2d.chunk.css": "/beespot_frontend_2/static/css/2.e775cb2d.chunk.css",
+    "static/js/2.bbcf1233.chunk.js": "/beespot_frontend_2/static/js/2.bbcf1233.chunk.js",
+    "static/js/2.bbcf1233.chunk.js.map": "/beespot_frontend_2/static/js/2.bbcf1233.chunk.js.map",
+    "index.html": "/beespot_frontend_2/index.html",
+    "precache-manifest.102c3d1a407c12862e19e26f34be4899.js": "/beespot_frontend_2/precache-manifest.102c3d1a407c12862e19e26f34be4899.js",
+    "service-worker.js": "/beespot_frontend_2/service-worker.js",
+    "static/css/2.e775cb2d.chunk.css.map": "/beespot_frontend_2/static/css/2.e775cb2d.chunk.css.map",
+    "static/css/main.1558e22a.chunk.css.map": "/beespot_frontend_2/static/css/main.1558e22a.chunk.css.map",
+    "static/media/bee-logo.svg": "/beespot_frontend_2/static/media/bee-logo.9a5c4dbf.svg",
+    "static/media/logo.svg": "/beespot_frontend_2/static/media/logo.5d5d9eef.svg"
   }
 }
