@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     if (!state.channel) {
-      const socket = new Socket("ws://localhost:4000/socket");
+      const socket = new Socket(process.env.REACT_APP_SOCKET_URL);
       socket.connect();
       socket.onClose(e => dispatch({ type: "setChannel", channel: null }));
 
