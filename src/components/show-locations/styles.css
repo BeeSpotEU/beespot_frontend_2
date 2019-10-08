@@ -1,0 +1,10 @@
+.mapbox-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.add_location {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}

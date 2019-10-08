@@ -13,6 +13,7 @@ import { LocationForm } from "components/location-form";
 import { MapViewer } from "components/mapviewer";
 import { ContextStoreProvider, ContextStore } from "utility/store";
 import { PickLocation } from "components/pick-location";
+import { ShowLocations } from "components/show-locations";
 
 function App() {
   const { state, dispatch } = useContext(ContextStore);
@@ -50,6 +51,7 @@ function App() {
         <Route path="/audience" exact component={AudienceForm} />
         <Route path="/foodsources" exact component={FoodSources} />
         <Route path="/presentation" exact component={Presentation} />
+        <Route path="/show-locations" exact component={ShowLocations} />
         <Route path="/location" exact component={LocationForm} />
         <Route path="/production" exact component={Production} />
         <Route path="/viewer" exact component={MapViewer} />
