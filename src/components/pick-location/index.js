@@ -57,8 +57,6 @@ export const PickLocation = ({
     }
   };
 
-  console.log(state.selfCreatedLocations);
-
   const onClickButton = () => {
     const map = mapRef.getMap();
     const center = map.getCenter();
