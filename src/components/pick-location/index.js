@@ -38,6 +38,14 @@ export const PickLocation = ({
   }, [state.socket, session]);
 
   const onDragEnd = location => e => {
+    dispatch({
+      type: "createdLocation",
+      location: {
+        ...location,
+        longitude: `${e.lngLat[0]}`,
+        latitude: `${e.lngLat[1]}`
+      }
+    });
     if (state.channel) {
       state.channel.push("add_location", {
         body: {
