@@ -3,7 +3,7 @@ import { LocationForm } from "components/location-form";
 import { ContextStore } from "utility/store";
 
 export const Clients = () => {
-  const { state, dispatch } = useContext(ContextStore);
+  const { state } = useContext(ContextStore);
 
   const addLocation = location => {
     if (state.channel) {

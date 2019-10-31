@@ -6,14 +6,28 @@ import mapboxgl from "mapbox-gl";
 import "./styles.css";
 import Pin from "./pin";
 import { Button } from "antd";
+import { leaveChannel, setupChannelPresenter } from "utility/socket";
 
-export const ShowLocations = () => {
+export const ShowLocations = ({
+  match: {
+    params: { session }
+  }
+}) => {
   const { state, dispatch } = useContext(ContextStore);
   const [viewport, setViewport] = useState({
     latitude: 52.119,
     longitude: 5.111,
     zoom: 8
   });
+
+  useEffect(() => {
+    if (state.socket && session && state.currentSession !== session) {
+      if (state.channel) {
+        leaveChannel(state.channel, dispatch);
+      }
+      setupChannelPresenter(state.socket, session, dispatch);
+    }
+  }, [state.socket, session]);
 
   const [mapRef, setMapRef] = useState();
 

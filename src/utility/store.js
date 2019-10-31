@@ -1,17 +1,23 @@
 import * as React from "react";
 import produce from "immer";
+import { Socket } from "phoenix";
 
 const ContextStore = React.createContext();
 
 const initialState = {
   channel: null,
   selfCreatedLocations: new Map(),
-  locations: new Map()
+  locations: new Map(),
+  socket: null,
+  session: null
 };
 
 const reducer = (state, action) => {
   return produce(state, draft => {
     switch (action.type) {
+      case "setSocket":
+        draft.socket = action.socket;
+        break;
       case "setChannel":
         draft.channel = action.channel;
         break;
@@ -24,6 +30,9 @@ const reducer = (state, action) => {
         draft.selfCreatedLocations = new Map(
           draft.selfCreatedLocations.set(action.location.id, action.location)
         );
+        break;
+      case "currentSession":
+        draft.session = action.session;
         break;
       default:
         break;

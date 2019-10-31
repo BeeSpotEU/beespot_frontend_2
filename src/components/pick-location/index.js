@@ -6,8 +6,13 @@ import mapboxgl from "mapbox-gl";
 import "./styles.css";
 import Pin from "./pin";
 import { Button } from "antd";
+import { leaveChannel, setupChannelParticipant } from "utility/socket";
 
-export const PickLocation = () => {
+export const PickLocation = ({
+  match: {
+    params: { session }
+  }
+}) => {
   const { state, dispatch } = useContext(ContextStore);
   const [viewport, setViewport] = useState({
     latitude: 52.119,
@@ -22,6 +27,15 @@ export const PickLocation = () => {
   // });
 
   const [placing, setPlacing] = useState(false);
+
+  useEffect(() => {
+    if (state.socket && session && state.currentSession !== session) {
+      if (state.channel) {
+        leaveChannel(state.channel, dispatch);
+      }
+      setupChannelParticipant(state.socket, session, dispatch);
+    }
+  }, [state.socket, session]);
 
   const onDragEnd = location => e => {
     if (state.channel) {
