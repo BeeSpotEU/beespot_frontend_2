@@ -19,7 +19,9 @@ function App() {
 
   useEffect(() => {
     if (!state.socket) {
-      const socket = new Socket(process.env.REACT_APP_SOCKET_URL);
+      const socket = new Socket(process.env.REACT_APP_SOCKET_URL, {
+        params: { user_id: "123" }
+      });
       socket.connect();
       socket.onClose(e => dispatch({ type: "setSocket", socket: null }));
       dispatch({ type: "setSocket", socket });

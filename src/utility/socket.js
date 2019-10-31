@@ -1,3 +1,5 @@
+import { Presence } from "phoenix";
+
 export const setupChannel = (socket, channelName, dispatch) => {
   const channel = socket.channel(channelName, {});
 
@@ -6,7 +8,17 @@ export const setupChannel = (socket, channelName, dispatch) => {
     .receive("ok", () => dispatch({ type: "setChannel", channel: channel }))
     .receive("error", () => console.error("Connection error"));
 
+  let presence = new Presence(channel);
+
+  presence.onSync(() => {
+    presenceList(presence.list());
+  });
+
   return channel;
+};
+
+const presenceList = list => {
+  console.log(list);
 };
 
 export const setupChannelLobby = (
