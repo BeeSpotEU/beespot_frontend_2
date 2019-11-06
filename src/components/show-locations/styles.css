@@ -1,5 +1,5 @@
-.mapbox-wrapper {
-  width: 100%;
+.show-locations.mapbox-wrapper {
+  width: calc(100% - 400px);
   height: calc(100vh - 64px);
 }
 

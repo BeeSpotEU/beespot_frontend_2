@@ -9,12 +9,17 @@ const initialState = {
   selfCreatedLocations: new Map(),
   locations: new Map(),
   socket: null,
-  session: null
+  session: null,
+  presence: []
 };
 
 const reducer = (state, action) => {
   return produce(state, draft => {
     switch (action.type) {
+      case "setPresence":
+        console.log(action.presence);
+        draft.presence = action.presence;
+        break;
       case "setSocket":
         draft.socket = action.socket;
         break;

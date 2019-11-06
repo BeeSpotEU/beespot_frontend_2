@@ -11,14 +11,11 @@ export const setupChannel = (socket, channelName, dispatch) => {
   let presence = new Presence(channel);
 
   presence.onSync(() => {
-    presenceList(presence.list());
+    // console.log(1234);
+    dispatch({ type: "setPresence", presence: presence.list() });
   });
 
   return channel;
-};
-
-const presenceList = list => {
-  console.log(list);
 };
 
 export const setupChannelLobby = (

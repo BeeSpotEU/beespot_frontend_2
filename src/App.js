@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./App.scss";
 import { ContextStore } from "utility/store";
 import { Socket } from "phoenix";
@@ -36,22 +36,24 @@ function App() {
     <div className="App">
       <Layout className="layout">
         <Header></Header>
-        <Content>
+        <Content style={{ marginTop: 24, height: "calc(100vh - 64px)" }}>
           <Router>
-            <Route path="/" exact component={Participant} />
-            <Route path="/:session" exact component={PickLocation} />
-            <Route path="/presentation" exact component={Presentation} />
-            <Route path="/presentation/:session" exact component={Session} />
-            <Route
-              path="/presentation/:session/locations"
-              exact
-              component={ShowLocations}
-            />
+            <Switch>
+              <Route path="/" exact component={Participant} />
+              <Route path="/presentation" exact component={Presentation} />
+              <Route path="/:session" exact component={PickLocation} />
+              <Route path="/presentation/:session" exact component={Session} />
+              <Route
+                path="/presentation/:session/locations"
+                exact
+                component={ShowLocations}
+              />
 
-            <Route path="/audience" exact component={AudienceForm} />
-            <Route path="/foodsources" exact component={FoodSources} />
-            <Route path="/location" exact component={LocationForm} />
-            <Route path="/production" exact component={Production} />
+              <Route path="/audience" exact component={AudienceForm} />
+              <Route path="/foodsources" exact component={FoodSources} />
+              <Route path="/location" exact component={LocationForm} />
+              <Route path="/production" exact component={Production} />
+            </Switch>
           </Router>
         </Content>
       </Layout>

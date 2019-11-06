@@ -74,7 +74,7 @@ export const PickLocation = ({
   const updateLocation = () => {};
 
   return (
-    <div className="mapbox-wrapper">
+    <div className="pick-locations mapbox-wrapper">
       <ReactMapGL
         ref={ref => setMapRef(ref)}
         mapStyle="//mvt.opengeo.nl/basemap-style.json"
