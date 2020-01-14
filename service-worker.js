@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/beespot_frontend_2/precache-manifest.271e0c045de30b8a311da2fb22c8d06e.js"
+  "/beespot_frontend_2/precache-manifest.830ab2f28137bdc1ff379b58d64449eb.js"
 );
 
 self.addEventListener('message', (event) => {

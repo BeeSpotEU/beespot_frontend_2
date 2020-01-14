@@ -1,0 +1,30 @@
+self.__precacheManifest = (self.__precacheManifest || []).concat([
+  {
+    "revision": "7177ac2785c18231b26359b7713018fd",
+    "url": "/beespot_frontend_2/index.html"
+  },
+  {
+    "revision": "430619222a9ca59fca14",
+    "url": "/beespot_frontend_2/static/css/2.c22e4bdd.chunk.css"
+  },
+  {
+    "revision": "ab44cdffb8d240d3dced",
+    "url": "/beespot_frontend_2/static/css/main.a3cfe0d5.chunk.css"
+  },
+  {
+    "revision": "430619222a9ca59fca14",
+    "url": "/beespot_frontend_2/static/js/2.3a895a98.chunk.js"
+  },
+  {
+    "revision": "ab44cdffb8d240d3dced",
+    "url": "/beespot_frontend_2/static/js/main.20dc1d12.chunk.js"
+  },
+  {
+    "revision": "e228695b92920e36c673",
+    "url": "/beespot_frontend_2/static/js/runtime-main.85ec2266.js"
+  },
+  {
+    "revision": "9a5c4dbfcafca5336f5d35ce9710fb69",
+    "url": "/beespot_frontend_2/static/media/bee-logo.9a5c4dbf.svg"
+  }
+]);
