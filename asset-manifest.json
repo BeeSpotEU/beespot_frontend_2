@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/beespot_frontend_2/static/css/main.a3cfe0d5.chunk.css",
-    "main.js": "/beespot_frontend_2/static/js/main.9f30fa23.chunk.js",
-    "main.js.map": "/beespot_frontend_2/static/js/main.9f30fa23.chunk.js.map",
+    "main.js": "/beespot_frontend_2/static/js/main.db543cf4.chunk.js",
+    "main.js.map": "/beespot_frontend_2/static/js/main.db543cf4.chunk.js.map",
     "runtime-main.js": "/beespot_frontend_2/static/js/runtime-main.85ec2266.js",
     "runtime-main.js.map": "/beespot_frontend_2/static/js/runtime-main.85ec2266.js.map",
     "static/css/2.c22e4bdd.chunk.css": "/beespot_frontend_2/static/css/2.c22e4bdd.chunk.css",
-    "static/js/2.1c83e5a5.chunk.js": "/beespot_frontend_2/static/js/2.1c83e5a5.chunk.js",
-    "static/js/2.1c83e5a5.chunk.js.map": "/beespot_frontend_2/static/js/2.1c83e5a5.chunk.js.map",
+    "static/js/2.8b064a2c.chunk.js": "/beespot_frontend_2/static/js/2.8b064a2c.chunk.js",
+    "static/js/2.8b064a2c.chunk.js.map": "/beespot_frontend_2/static/js/2.8b064a2c.chunk.js.map",
     "index.html": "/beespot_frontend_2/index.html",
-    "precache-manifest.a23d5cbaaf073e77a63537055225fe4b.js": "/beespot_frontend_2/precache-manifest.a23d5cbaaf073e77a63537055225fe4b.js",
+    "precache-manifest.271e0c045de30b8a311da2fb22c8d06e.js": "/beespot_frontend_2/precache-manifest.271e0c045de30b8a311da2fb22c8d06e.js",
     "service-worker.js": "/beespot_frontend_2/service-worker.js",
     "static/css/2.c22e4bdd.chunk.css.map": "/beespot_frontend_2/static/css/2.c22e4bdd.chunk.css.map",
     "static/css/main.a3cfe0d5.chunk.css.map": "/beespot_frontend_2/static/css/main.a3cfe0d5.chunk.css.map",
@@ -18,8 +18,8 @@
   "entrypoints": [
     "static/js/runtime-main.85ec2266.js",
     "static/css/2.c22e4bdd.chunk.css",
-    "static/js/2.1c83e5a5.chunk.js",
+    "static/js/2.8b064a2c.chunk.js",
     "static/css/main.a3cfe0d5.chunk.css",
-    "static/js/main.9f30fa23.chunk.js"
+    "static/js/main.db543cf4.chunk.js"
   ]
 }
