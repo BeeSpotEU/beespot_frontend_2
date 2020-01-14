@@ -16,12 +16,41 @@ import { Participant } from "components/participant";
 import { Header } from "components/header";
 import { Layout } from "antd";
 
+const url = require("url");
+
 const { Content } = Layout;
+
+const getPublicUrl = () =>
+  process.env.PUBLIC_URL || process.env.npm_package_homepage;
+
+function ensureSlash(inputPath, needsSlash) {
+  const hasSlash = inputPath.endsWith("/");
+  if (hasSlash && !needsSlash) {
+    return inputPath.substr(0, inputPath.length - 1);
+  } else if (!hasSlash && needsSlash) {
+    return `${inputPath}/`;
+  } else {
+    return inputPath;
+  }
+}
+
+function getServedPathname() {
+  const publicUrl = getPublicUrl();
+  const servedUrl =
+    process.env.PUBLIC_URL || (publicUrl ? url.parse(publicUrl).pathname : "/");
+  let publicPath = ensureSlash(servedUrl, true);
+  publicPath = process.env.NODE_ENV === "production" ? publicPath : "/";
+  const publicPathname = url.parse(publicPath).pathname;
+  return publicPathname;
+}
+
+const servedPathName = getServedPathname();
 
 function App() {
   const { state, dispatch } = useContext(ContextStore);
 
   useEffect(() => {
+    console.log(`Served path name: ${servedPathName}`);
     if (!state.socket) {
       const socket = new Socket(process.env.REACT_APP_SOCKET_URL, {
         params: { user_id: "123" }
@@ -37,7 +66,7 @@ function App() {
       <Layout className="layout">
         <Header></Header>
         <Content style={{ marginTop: 24, height: "calc(100vh - 64px)" }}>
-          <Router basename={process.env.REACT_APP_BASENAME}>
+          <Router basename={servedPathName}>
             <Switch>
               <Route path="/" exact component={Participant} />
               <Route path="/presentation" exact component={Presentation} />
