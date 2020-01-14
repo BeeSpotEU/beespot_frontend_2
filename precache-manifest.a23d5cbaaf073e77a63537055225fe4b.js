@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "38728c28a20337a3133a659465ce88b2",
+    "revision": "8eeba77779488fcf4f4aed7a10b39bd0",
     "url": "/beespot_frontend_2/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beespot_frontend_2/static/css/2.c22e4bdd.chunk.css"
   },
   {
-    "revision": "949d7c28aaa8641cae3b",
+    "revision": "3de177b5b33c379a5e41",
     "url": "/beespot_frontend_2/static/css/main.a3cfe0d5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beespot_frontend_2/static/js/2.1c83e5a5.chunk.js"
   },
   {
-    "revision": "949d7c28aaa8641cae3b",
-    "url": "/beespot_frontend_2/static/js/main.22d7f869.chunk.js"
+    "revision": "3de177b5b33c379a5e41",
+    "url": "/beespot_frontend_2/static/js/main.9f30fa23.chunk.js"
   },
   {
     "revision": "e228695b92920e36c673",
