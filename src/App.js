@@ -37,7 +37,7 @@ function App() {
       <Layout className="layout">
         <Header></Header>
         <Content style={{ marginTop: 24, height: "calc(100vh - 64px)" }}>
-          <Router>
+          <Router basename={process.env.REACT_APP_BASENAME}>
             <Switch>
               <Route path="/" exact component={Participant} />
               <Route path="/presentation" exact component={Presentation} />
